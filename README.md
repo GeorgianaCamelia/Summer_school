@@ -13,27 +13,36 @@ Avand in vedere cerinta prezentata putem sa impartim proiectul in **trei main ta
 
 
 ### Conectarea la baza de date si crearea legaturii acesteia cu formularul de inscriere 
+![alt text](https://github.com/GeorgianaCamelia/Summer_school/blob/master/images/schita_bd.png?raw=true "Schita bazei de date")
+
 Baza de date va contine urmatoarele tabele:
 1. Persoana format din atributele: 
 * ID_P - cheie primara
 * Nume
 * Prenume
-* E-mail
+* Email
 * Telefon
 * Ocupatie
 2. Curs format din atributele:
 * ID_C - cheie primara
 * Nume_curs
-* Durata
-3. Legatura contine cheia primara a tabelelor Persoana si Curs
+* Data_inceperii
+3. Legatura ce va contine cheia primara a tabelelor Persoana si Curs
 * ID_P
 * ID_C
+4. Mesaj ce va retine mesajele primite cu intrebari legate de concurs, fromat din atributele:
+* Nume
+* Email
+* Text
+5. Admin ce va retine 
+* Parola criptata cu MD5 a adimin-ului
+* numele "admin"
 
 Va fi posibila afisarea participantilor in functie de cursurile la care s-au inscris.
 
 In crearea BD si conexiunilor se va folosi MySQL si PHP. 
 
-![alt text](https://github.com/GeorgianaCamelia/Summer-courses/blob/master/images/Bd.png?raw=true "Schita BD")
+
 
 ### Crearea site-ului
 Fiecare pagina html din cadrul aplicatiei este formata dintr-un container care va contine un header(contine un logo cu numele scolii, un meniu de navigare), un body(specific continutului fiecarei pagini) si un footer.
