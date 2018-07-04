@@ -30,17 +30,13 @@ Baza de date va contine urmatoarele tabele:
 3. Legatura ce va contine cheia primara a tabelelor Persoana si Curs
 * ID_P
 * ID_C
-4. Mesaj ce va retine mesajele primite cu intrebari legate de concurs, fromat din atributele:
-* Nume
-* Email
-* Text
-5. Admin ce va retine 
+4. Admin ce va retine 
 * Parola criptata cu MD5 a adimin-ului
 * numele "admin"
 
 Va fi posibila afisarea participantilor in functie de cursurile la care s-au inscris.
 
-In crearea BD si conexiunilor se va folosi MySQL si PHP. 
+In crearea BD si conexiunii se va folosi MySQL si PHP. 
 
 
 
