@@ -46,10 +46,10 @@ CREATE TABLE IF NOT EXISTS legatura (
 -- Modern Windows Deployment Technologies: MSI AppX
 -- Face Recognition In .NET/C# Application
 
-INSERT INTO curs VALUES (1, 'Modern C++ Programming', 2018-06-25);
-INSERT INTO curs VALUES (2, 'Building A Modern Web Application', 2018-07-03);
-INSERT INTO curs VALUES (3, 'Modern Windows Deployment Technologies: MSI AppX', 2018-07-09);
-INSERT INTO curs VALUES (4, 'Face Recognition In .NET/C# Application', 2018-06-29);
+INSERT INTO curs VALUES (1, 'Modern C++ Programming', '2018-06-25');
+INSERT INTO curs VALUES (2, 'Building A Modern Web Application', '2018-07-03');
+INSERT INTO curs VALUES (3, 'Modern Windows Deployment Technologies: MSI AppX', '2018-07-09');
+INSERT INTO curs VALUES (4, 'Face Recognition In .NET/C# Application', '2018-06-29');
 
 -- Inserare persoana
 
