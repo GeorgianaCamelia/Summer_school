@@ -9,7 +9,7 @@
 Avand in vedere cerinta prezentata putem sa impartim proiectul in **trei main task-uri**:
 * Crearea unei baze de date specifica cerintei
 * Crearea site-ului 
-* Crearea unei legaturi intre formularul de inscriere si baza de date
+* Functionabilitatea site-ului
 
 
 ### Conectarea la baza de date si crearea legaturii acesteia cu formularul de inscriere 
