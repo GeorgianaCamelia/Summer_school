@@ -85,7 +85,7 @@
                                 
                                 if(mysqli_num_rows($result)) {
                                      while($row = mysqli_fetch_array($result)){
-                                         echo "<input type='checkbox' name='cursuri[]' value='".$row['nume_curs']."'>".$row['nume_curs']."<br/>";
+                                         echo "<br><input type='checkbox' name='cursuri[]' value='".$row['nume_curs']."'>".$row['nume_curs']."<br/>";
 
                                  }
                                 }
