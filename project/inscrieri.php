@@ -1,6 +1,5 @@
 <?php
-// include 'includes/dbh.inc.php';
-$conn = mysqli_connect("localhost","root","");
+    include 'includes/connect.inc.php';
 ?>
 <!DOCTYPE html>
 <html>
@@ -77,22 +76,20 @@ $conn = mysqli_connect("localhost","root","");
                                 <input type="checkbox"> 
                                 <span class="checkmark"></span>
                                 </label> -->
-                                    <?php 
-                                    //Create the query
-                                    $sql = "SELECT `nume_curs` FROM curs";
+                                
 
-                                    //Run the query
-                                   
-                                    $query_resource = mysqli_query( $conn,$sql);
+                                <?php
 
-                                    //Iterate over the results that you've gotten from the database (hopefully MySQL)
-                                    while( $curs = mysqli_fetch_assoc($query_resource) ):
-                                ?>
+                                $query = "SELECT nume_curs FROM curs";
+                                $result = mysqli_query($conn, $query);
+                                
+                                if(mysqli_num_rows($result)) {
+                                     while($row = mysqli_fetch_array($result)){
+                                         echo "<input type='checkbox' name='cursuri[]' value='".$row['nume_curs']."'>".$row['nume_curs']."<br/>";
 
-                                    <span><?php echo $curs['nume_curs']; ?></span>
-                                    <input type="checkbox" name="cursuri[]" value="<?php echo $curs['nume_curs']; ?> /><br />
-
-                                <?php endwhile; ?>
+                                 }
+                                }
+                                 ?>
                                 
 								<input type="submit" value="Trimite">
                                 <input type="reset" value="Reseteaza">
