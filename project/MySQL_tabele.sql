@@ -13,7 +13,7 @@ INSERT INTO `admin` (`nume`, `parola`) VALUES ('admin', MD5('admin'));
 -- Tabel pentru retinerea persoanelor inscrise
 
 CREATE TABLE IF NOT EXISTS persoana (
-	id_p int(11) NOT NULL,
+	id_p int(11) NOT NULL AUTO_INCREMENT,
 	nume char(30) NOT NULL,
 	prenume char(30) NOT NULL,
 	email char(30) NOT NULL,
@@ -21,6 +21,8 @@ CREATE TABLE IF NOT EXISTS persoana (
 	ocupatie char(30) NOT NULL,
     PRIMARY KEY (id_p)
 );
+
+-- INSERT INTO persoana(nume,prenume,email,telefon,ocupatie) VALUES('Popa','Maria','someemail@yahoo.com','0712345678','student');
 
 -- Tabel pentru retinerea cursurilor disponibile
 
