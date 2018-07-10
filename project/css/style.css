@@ -1,0 +1,331 @@
+html, body {
+    margin: 0; 
+    padding: 0;
+    height: 100%;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+}
+
+section {
+    min-height: 100%;
+    padding: 100px;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style-type: none;
+}
+
+h1, h2, h3, a {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    color: #494949;
+    text-transform: uppercase;
+}
+
+hr {
+    width: 800px;
+    height: 5px;
+    background: #b1acac;
+    border: 0;
+    margin: 0 auto 40px auto;
+}
+
+#logo, li, img {
+    transition: all 300ms;
+    -webkit-transition: all 300ms;
+    -moz-transition: all 300ms;
+    -o-transition: all 300ms;
+}
+
+#border_radius {
+    border-radius: 5px;
+    background-color: #87a9ad26;
+    opacity: 0.7;
+    padding: 20px;
+    width: 800px;
+    margin: 0 auto;
+}
+
+#border_radius_contact {
+    border-radius: 5px;
+    background-color: #87a9ad26;
+    opacity: 0.7;
+    padding: 20px;
+    width: 800px;
+    height: 250px;
+    margin: 100px auto;
+}
+
+/* HEADER ************************/
+
+header {
+    width: 100%;
+    height: 65px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: white;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+}
+
+#logo {
+    width: 100px;
+    float: left;
+    margin: 0 0 0 10px;
+}
+
+#logo:hover {
+    opacity: 0.9;
+}
+
+#logo img {
+    width: 100%;
+    height: 70px;
+    opacity: 0.7;
+    filter: grayscale(100%);
+}
+
+header nav {
+    float: right;
+    margin: 10px 0px 0 0;
+}
+
+header nav ul li {
+    float: left;
+    margin-right: 16px;
+}
+
+header nav ul li a {
+    font-size: 16px;
+}
+
+header nav ul li:hover {
+    padding-top: 5px;
+}
+
+/* HOME ************************/
+
+#home {
+    background: url("landing.jpg");
+    background-position: center center;
+    background-size: cover;
+    background-attachment: fixed;
+    margin: auto;
+}
+
+#home h1 {
+    margin: 150px auto 0 auto;
+    font-size: 50px;
+}
+
+#home p {
+    text-transform: uppercase;
+    margin: 54px auto 0 auto;
+    font-size: 18px;
+}
+
+#home img {
+    width: 50px;
+    margin-top: 60px;
+    opacity: 0.7;
+}
+
+/* INSCRIERI ************************/
+
+#inscrieri {
+    background-color: #f0f0f0;
+    text-align: left;
+    font-size: 20px;
+}
+
+#inscrieri p {
+    text-align: center;
+}
+
+input[type=text], input[type=email], input[type=tel], select {
+    font-family: 'Roboto Slab', serif;
+    font-size: 20px;
+    width: 100%;
+    padding: 12px 5px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=submit], input[type=reset] {
+    background-color: #6a8498;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+input[type=submit]:hover {
+    background-color: #4b667a;
+  }
+
+input[type=reset]:hover {
+    background-color: #4b667a;
+  }
+
+/*
+form input, select{
+    font-family: 'Roboto Slab', serif;
+    font-size: 15px;
+    margin-bottom: 10px;
+    border-radius: 2px;
+    border: 2px solid;
+    border-color: #494949;
+    width: 250px;
+    height: 30px;
+    
+}
+
+.input_text {
+    color: #494949;
+    padding-left: 10px;
+}
+
+.button {
+    background-color: #f0f0f0;
+    color: #494949;
+    width: 150px;
+    height: 30px;
+}
+
+.button:hover {
+    background-color: #494949;
+    color: #f0f0f0;
+} */
+
+
+/* CURSURI ************************/
+
+#cursuri {
+    background-color: rgba(205, 217, 239, 0.4);
+}
+
+#cursuri p {
+    text-align: left;
+}
+
+#cursuri li {
+    text-align: left;
+    list-style: circle;  
+}
+
+/* TRAINERI ************************/
+
+#traineri {
+    background-color: #f0f0f0;
+}
+
+#info {
+    margin-left: 100px;
+}
+
+#info ul {
+    padding: 0;
+}
+
+#info ul li {
+    width: 33,3%;
+    float: left;
+    margin-right: 25px;
+    margin-top: 100px;
+}
+
+#info img {
+    width: 300px;
+    height: 200px;
+    border-radius: 50px;
+}
+
+#info img:hover {
+    transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* CALENDAR ************************/
+
+#calendar {
+    background-color: rgba(205, 217, 239, 0.4);
+}
+
+#calendar h4 {
+    text-align: left;
+}
+#calendar p {
+    text-align: left;
+}
+#calendar li {
+    text-align: left;
+    list-style: circle;  
+}
+
+/* ORGANIZATORI ************************/
+#organizatori {
+    background-color: #f0f0f0;
+}
+
+#info_org {
+    margin-left: 40px;
+}
+
+#info_org ul li {
+    width: 21%;
+    float: left;
+    margin-right: 40px;
+    margin-top: 100px;
+}
+
+#info_org img {
+    width: 230px;
+    height: 200px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+}
+
+#info_org img:hover {
+    transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.3);
+}
+#organizatori a {
+    font-size: 13px;
+}
+
+/* EDITII ************************/
+
+#editii {
+    background-color: rgba(205, 217, 239, 0.4);
+}
+
+/* CONTACT ************************/
+
+#contact {
+    background-color: #f0f0f0;
+}
+
+#left_col {
+    float:left;
+}
+
+#right_col {
+    float:right;
+}
+
