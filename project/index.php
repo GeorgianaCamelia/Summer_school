@@ -88,7 +88,7 @@ include 'includes/connect.inc.php';
 
         <section id="inscrieri">
             <div id="border_radius">
-            <form action="#" method= "post" id-"form-reg" onsubmit="return checkform(this);">
+            <form action="includes/submit.php" method= "post" id-"form-reg" onsubmit="return checkform(this);">
                 <p>Completeaza campurile pentru a te inscrie.</p>
                 <span id= "form-message"></span>
                 <hr>
@@ -120,16 +120,16 @@ include 'includes/connect.inc.php';
                                         
                         if(mysqli_num_rows($result)) {
                             while($row = mysqli_fetch_array($result)){
-                                    echo "<br><input type='checkbox' name='cursuri[]' value='".$row['nume_curs']."'>".$row['nume_curs']."<br/>";
+                                    echo "<br><input name= 'form-chkbx' type='checkbox' name='cursuri[]' value='".$row['nume_curs']."'>".$row['nume_curs']."<br/>";
                                         }
                                         }
                     ?>
                     
                    <!-- START CAPTCHA -->
-                   <h4> Introduceti codul: </h4>
+                   <!-- <h4> Introduceti codul: </h4>
                    <input type="text" id="randomfield" disabled /> 
                    <input type="button" id="btnrefresh" value="Refresh" onclick="ChangeCaptcha();" /> <br>
-                   <input id="CaptchaEnter"  maxlength="6" /> <br>
+                   <input id="CaptchaEnter"  maxlength="6" /> <br> -->
                   
 
                     <!-- END CAPTCHA -->
