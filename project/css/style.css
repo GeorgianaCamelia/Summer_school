@@ -176,6 +176,19 @@ input[type=submit]:hover {
 input[type=reset]:hover {
     background-color: #4b667a;
   }
+  /* Clasa pentru editarea vizuala e  erorilor*/
+
+.input-error{
+    transition: 200ms linear;
+    background-color: #f2cdcd;
+    font-style: italic;
+}
+
+.input-checked {
+    transition: 200ms linear;
+    background-color:  #e5f1cc;
+}
+
 
 /*
 form input, select{
