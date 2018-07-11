@@ -41,7 +41,7 @@ In crearea BD si conexiunii se va folosi MySQL si PHP.
 
 
 ### Crearea site-ului
-Fiecare pagina html din cadrul aplicatiei este formata dintr-un container care va contine un header(contine un logo cu numele scolii, un meniu de navigare), un body(specific continutului fiecarei pagini) si un footer.
+Aplicatia este formata dintr-o pagina HTML care va contine elementele head(in interiorul lui vom gasi o serie de elemente prin care ii spunem browser-ului: titlul paginii, unde sunt situate fisierele CSS si Javascript si cum ar trebui citit documentul) si elementul body(vom pune tot continutul paginii). Body-ul este format dintr-un header(contine un logo, un meniu de navigare), sectiune pentru fiecare optiune din meniu si un footer.
 
 Meniul de navigare este compus din: 
 * Home
@@ -52,21 +52,24 @@ Meniul de navigare este compus din:
 * Organizatori
 * Editii
 
-![alt text](https://github.com/GeorgianaCamelia/Summer-courses/blob/master/images/meniu.jpg?raw=true "Meniu")
+![alt text](https://github.com/GeorgianaCamelia/Summer_school/blob/master/images/meniu.jpg?raw=true "Meniu")
 
-* Pagina de Home contine datele de contact si un formular prin care se pot trimite mesaje organizatorilor.
+* Sectiunea de Home contine informatii despre cursuri si un icon bar care prin apasare te redirectioneaza la sectiunea de Inscrieri.
 
 ![alt text](https://github.com/GeorgianaCamelia/Summer_school/blob/master/images/Home.png?raw=true "Home Page")
 
-* Pagina Inscrieri contine un formular(nume, prenume, e-mail, telefon, ocupatie, alegerea cursurilor la care se doreste participarea) prin care persoanele interesate se pot inscrie la cursurile dorite.
+* Sectiunea Inscrieri contine un formular(nume, prenume, e-mail, telefon, ocupatie, alegerea cursurilor la care se doreste participarea) prin care persoanele interesate se pot inscrie la cursurile dorite. De asemenea, sectiunea contine un captcha(o metodă automată de a determina dacă utilizatorul unui software este o persoană sau un program de calculator)
 
-![alt text](https://github.com/GeorgianaCamelia/Summer-courses/blob/master/images/Formular.png?raw=true "Formular")
+![alt text](https://github.com/GeorgianaCamelia/Summer_school/blob/master/images/Formular.png?raw=true "Formular")
 
-* Pagina Cursuri contine informatii despre fiecare curs 
-* Pagina Traineri contine informatii despre trainerii fiecarui curs
-* Pagina Calendar contine informatii despre desfasurarea fiecarui curs
-* Pagina Organizatori contine informatii despre organizatorii scolii de vara 
-* Pagia Editii contine informatii despre editiile anterioare
+* Sectiunea Cursuri contine informatii despre fiecare curs 
+* Sectiunea Traineri contine informatii despre trainerii fiecarui curs
+* Sectiunea Calendar contine informatii despre desfasurarea fiecarui curs
+* Sectiunea Organizatori contine informatii despre organizatorii scolii de vara 
+* Sectiunea Editii contine informatii despre editiile anterioare
+* Sectiunea Contact contine informatii despre locul de desfasurare al cursurilor
+
+Pagina va fi stilizata cu ajutorul CSS-ului
 
  ### Functionabilitatea site-ului
 Pe langa stocarea informatiilor si aspectul estetic al site-ului acesta trebuie sa raspunda comenzilor date de catre utilizator si mai mult decat atat trebuie sa verifice daca datele care sunt trimise catre server sunt valide si nu afecteaza buna functionalitate.
