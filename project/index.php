@@ -11,6 +11,8 @@ include 'includes/connect.inc.php';
         <script type="text/javascript" src="js/script.js"></script>
         <link href="https://fonts.googleapis.com/css?family=Roboto:300" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="js/valid-form.js"></script>
         
         <style>
             #randomfield { 
@@ -86,9 +88,10 @@ include 'includes/connect.inc.php';
 
         <section id="inscrieri">
             <div id="border_radius">
+            <form action="#" method= "post" id-"form-reg" onsubmit="return checkform(this);">
                 <p>Completeaza campurile pentru a te inscrie.</p>
+                <span id= "form-message"></span>
                 <hr>
-                <form action="#"  onsubmit="return checkform(this);">
 
                     <label for="nume">Nume:</label> 
                     <input type="text" name="nume" id="nume"> 
@@ -97,41 +100,19 @@ include 'includes/connect.inc.php';
                     <input type="text" name="prenume" id="prenume"> 
                             
                     <label for="email">Email:</label>
-                    <input type="email" name="email" id="email"> 
+                    <input type="text" name="email" id="email"> 
                                 
                     <label for="telefon">Telefon:</label>
-                    <input type="tel" name="telefon" id="telefon"> 
+                    <input type="text" name="telefon" id="telefon"> 
                             
                     Ocupatie:
-                    <select>
-                        <option value="alege" disabled selected>Alege</option>
+                    <select id= "ocupatie">
+                        <option value="altceva" disabled selected>Altceva</option>
                         <option value="elev">Elev</option>
                         <option value="student">Student</option>
-                        <option value="altceva">Altceva</option>
                     </select> <br>
 
                     Alegeti cursurile la care doriti sa participati: <br>
-                    <!--
-                        <label class = "check">[ Modern ] ( C++ ) { Programming }
-                        <input type="checkbox" checked="checked"> 
-                        <span class="checkmark"></span>
-                        </label>
-
-                        <label class = "check">(Building) => 'A Modern Web Application'
-                        <input type="checkbox"> 
-                        <span class="checkmark"></span>
-                        </label>
-
-                        <label class = "check">Modern Windows Deployment Technologies: MSI->AppX
-                        <input type="checkbox"> 
-                        <span class="checkmark"></span>
-                        </label>
-
-                        <label class = "check">Face Recognition In .NET/C# Application
-                        <input type="checkbox"> 
-                        <span class="checkmark"></span>
-                        </label>
-                    -->
 
                     <?php
                         $query = "SELECT nume_curs FROM curs";
@@ -153,7 +134,7 @@ include 'includes/connect.inc.php';
 
                     <!-- END CAPTCHA -->
                    
-                    <input type="submit" value="Trimite" onclick="check()">
+                    <input  id= "form-submit" type="submit" value="Trimite" onclick="check()">
                     <input type="reset" value="Reseteaza">
                 </form>
             </div>
