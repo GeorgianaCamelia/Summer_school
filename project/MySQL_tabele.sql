@@ -58,13 +58,24 @@ INSERT INTO curs VALUES (4, 'Face Recognition In .NET/C# Application', '2018-06-
 
 INSERT INTO persoana VALUES (1, 'Popa', 'Ion', 'someemail@yahoo.com', '0712345678', 'student');
 INSERT INTO persoana VALUES (2, 'Popa', 'Maria', 'someemail@yahoo.com', '0712345678', 'student');
+INSERT INTO persoana VALUES (3, 'Voican', 'Andra', 'someemail@yahoo.com', '0712345678', 'student');
+INSERT INTO persoana VALUES (4, 'Gherghe', 'Geani', 'someemail@yahoo.com', '0712345678', 'student');
+INSERT INTO persoana VALUES (5, 'Gitan', 'Georgiana', 'someemail@yahoo.com', '0712345678', 'student');
 
 -- Inserare in legatura id-ul persoanei si id-ul cursului alese
 
 INSERT INTO persoana_curs VALUES (1,1);
-INSERT INTO persoana_curs VALUES (1,2);
 INSERT INTO persoana_curs VALUES (1,4);
+
 
 INSERT INTO persoana_curs VALUES (2,1);
 INSERT INTO persoana_curs VALUES (2,2);
 INSERT INTO persoana_curs VALUES (2,3);
+
+INSERT INTO persoana_curs VALUES (3,1);
+INSERT INTO persoana_curs VALUES (3,2);
+
+INSERT INTO persoana_curs VALUES (4,1);
+
+INSERT INTO persoana_curs VALUES (5,1);
+
