@@ -4,14 +4,50 @@ include 'includes/connect.inc.php';
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Summer School</title>
         <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Summer School</title>     
         <link rel="stylesheet" type="text/css" href="css/style.css">
+        <script type="text/javascript" src="js/script.js"></script>
         <link href="https://fonts.googleapis.com/css?family=Roboto:300" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
+        
+        <style>
+            #randomfield { 
+                -webkit-touch-callout: none;
+                -webkit-user-select: none;
+                -khtml-user-select: none;
+                -moz-user-select: none;
+                -ms-user-select: none;
+                user-select: none; 
+                width: 200px;
+                height: 50px;
+                color: black;
+                border-color: black;
+                text-align: center;
+                font-size: 40px;
+                background-image: url('img/captcha.png');
+                }  
+            #CaptchaEnter{
+                width: 200px;
+                height: 30px;
+                text-align: center;
+                font-size: 18px;
+            }   
+            #btnrefresh{
+                background-color: #f0f0f0;
+                color: #494949;
+               
+                border-radius: 12px;
+
+            } 
+        </style>
+        
+        
+    
     </head>
 
-    <body>
+    <body onLoad="ChangeCaptcha()">
 
         <!-- HEADER -->
 
@@ -52,7 +88,7 @@ include 'includes/connect.inc.php';
             <div id="border_radius">
                 <p>Completeaza campurile pentru a te inscrie.</p>
                 <hr>
-                <form action="#">
+                <form action="#"  onsubmit="return checkform(this);">
 
                     <label for="nume">Nume:</label> 
                     <input type="text" name="nume" id="nume"> 
@@ -107,9 +143,17 @@ include 'includes/connect.inc.php';
                                         }
                                         }
                     ?>
+                    
+                   <!-- START CAPTCHA -->
+                   <h4> Introduceti codul: </h4>
+                   <input type="text" id="randomfield" disabled /> 
+                   <input type="button" id="btnrefresh" value="Refresh" onclick="ChangeCaptcha();" /> <br>
+                   <input id="CaptchaEnter"  maxlength="6" /> <br>
+                  
 
-
-                    <input type="submit" value="Trimite">
+                    <!-- END CAPTCHA -->
+                   
+                    <input type="submit" value="Trimite" onclick="check()">
                     <input type="reset" value="Reseteaza">
                 </form>
             </div>
