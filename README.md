@@ -56,7 +56,7 @@ Meniul de navigare este compus din:
 
 * Pagina de Home contine datele de contact si un formular prin care se pot trimite mesaje organizatorilor.
 
-![alt text](https://github.com/GeorgianaCamelia/Summer-courses/blob/master/images/Home.png?raw=true "Home Page")
+![alt text](https://github.com/GeorgianaCamelia/Summer_school/blob/master/images/Home.png?raw=true "Home Page")
 
 * Pagina Inscrieri contine un formular(nume, prenume, e-mail, telefon, ocupatie, alegerea cursurilor la care se doreste participarea) prin care persoanele interesate se pot inscrie la cursurile dorite.
 
