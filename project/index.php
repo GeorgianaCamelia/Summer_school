@@ -62,14 +62,14 @@ include 'includes/connect.inc.php';
 
             <nav id="main-nav">
                 <ul>
-                    <li><a href="#home">Home</a></li> 
-                    <li><a href="#inscrieri">Inscrieri</a></li> 
-                    <li><a href="#cursuri">Cursuri</a></li>
-                    <li><a href="#traineri">Traineri</a></li>
-                    <li><a href="#calendar">Calendar</a></li>
-                    <li><a href="#organizatori">Organizatori</a></li>
-                    <li><a href="#editii">Editii</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#home" class="button-1">Home</a></li> 
+                    <li><a href="#inscrieri" class="button-1">Inscrieri</a></li> 
+                    <li><a href="#cursuri" class="button-1">Cursuri</a></li>
+                    <li><a href="#traineri" class="button-1">Traineri</a></li>
+                    <li><a href="#calendar" class="button-1">Calendar</a></li>
+                    <li><a href="#organizatori" class="button-1">Organizatori</a></li>
+                    <li><a href="#editii" class="button-1">Editii</a></li>
+                    <li><a href="#contact" class="button-1">Contact</a></li>
                 </ul>
             </nav>
         </header>
@@ -191,9 +191,9 @@ include 'includes/connect.inc.php';
         <section id="traineri"> 
             <div id="info">
                 <ul>
-                    <li><a href="#"><img src="img/georgi.jpg"></a><h3>Gitan Georgiana Camelia </h3></li>
-                    <li><a href="#"><img src="img/geani.jpg"></a><h3>Gherghe Geani Robert</h3></li>
-                    <li><a href="#"><img src="img/andra.jpg"></a><h3>Voican Andra</h3></li>
+                    <li><a href="#"><img src="img/geani.png"></a><h3>Gherghe Geani Robert</h3></li>
+                    <li><a href="#"><img src="img/girl.png"></a><h3>Gitan Georgiana Camelia </h3></li>
+                    <li><a href="#"><img src="img/andra.png"></a><h3>Voican Andra</h3></li>
                 </ul>
             </div>
         </section>
