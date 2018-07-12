@@ -1,10 +1,8 @@
 <?php
-
-
 if(isset($_POST['submit'])){
-
     // Stabilim conexiunea cu serverul 
     $conn               = mysqli_connect("localhost","root","","db_summerschool");
+    include_once 'connect.inc.php';
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     // Preluam datele din form
     $nume               = mysqli_real_escape_string($conn, $_POST['nume']);
@@ -32,24 +30,34 @@ if(isset($_POST['submit'])){
             $sql = "UPDATE persoana SET email='$email', telefon='$telefon', ocupatie='$ocupatie' WHERE nume = '".$nume."' AND prenume = '".$prenume."'";
             
             // Vectorul legaturilor (id_p,id_c)
-            $legatura = "SELECT * FROM persoana_curs";
-            $rez = mysqli_query($conn, $legatura);
-            $legarray = array();
+            $pc = "SELECT * FROM persoana_curs";
+            $rez = mysqli_query($conn, $pc);
+            $pcarray = array();
             if(mysqli_num_rows($rez) > 0){
                 while ($row = mysqli_fetch_assoc($rez)){
-                 $legarray[] = $row;
+                 $pcarray[] = $row;
                 }
             }   
+            foreach ($pcarray as $pcarr) {
+                if($data['id_p'] == $pcarr['id_p']){
+                    foreach($cursuri as $curs){
+                        if($curs != $pcarr['id_c']){
+                            //insereaza 
+                        }
+                    }
+
+                }
+            }
             
             $find = true;
+            
+            mysqli_query($conn, $sql);  
         }
     }
-
     // Daca nu a gasit persoana in BD
     if($find == false){
         // Insereaza in tabelul persoana
         $sql = "INSERT INTO persoana(nume, prenume, email, telefon, ocupatie) VALUES ('$nume' , '$prenume', '$email', '$telefon', '$ocupatie')";
-
         // Cauta ultimul id
         if ($conn->query($sql) === TRUE) {
                 $last_id = $conn->insert_id;
@@ -65,7 +73,6 @@ if(isset($_POST['submit'])){
                 echo "Error: " . $sql . "<br>" . $conn->error;
             }
     }
-
     
     
     echo $nume." ";
@@ -75,7 +82,6 @@ if(isset($_POST['submit'])){
     echo $telefon." ";
     print_r($cursuri);
     
-    mysqli_query($conn, $sql);
   
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 }
