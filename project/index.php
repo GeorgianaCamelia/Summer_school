@@ -97,7 +97,7 @@ include 'includes/connect.inc.php';
                                 
                     <label for="prenume">Prenume:</label> 
                     <input type="text" name="prenume" id="prenume"> 
-                            
+                                    
                     <label for="email">Email:</label>
                     <input type="text" name="email" id="email"> 
                                 

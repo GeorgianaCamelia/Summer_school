@@ -4,18 +4,13 @@ $(document).ready(function(){
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     $("#nume, #prenume, #email, #telefon").blur(function(){
         $(this).removeClass('input-error');
-        $(this).removeClass('input-checked');  
         if($(this).val() == null || $(this).val() == undefined || $(this).val() == "" || $.trim($(this).val()) == ''){
-            valid = false;
             $(this).addClass('input-error');
             $(this).attr('placeholder', 'Te rugam sa completezi acest camp!');
             $(this).focus(function(){
                 $(this).removeClass('input-error');
                 $(this).removeAttr('placeholder');
             });
-        }
-        else {
-            $(this).addClass('input-checked');
         }
     });
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
