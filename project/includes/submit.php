@@ -1,18 +1,30 @@
 <?php
 
+
 if(isset($_POST['submit'])){
 
-    $nume = $_POST['nume'];
-    $prenume = $_POST['prenume'];
-    $email = $_POST['email'];
-    $ocupatie = $_POST['ocupatie'];
-    $telefon = $_POST['telefon'];
-    $cursuri = json_decode($_POST['cursuri']);
+    // Stabilim conexiunea cu serverul 
+    $conn               = mysqli_connect("localhost","root","","db_summerschool");
+    //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    // Preluam datele din form
+    $nume               = mysqli_real_escape_string($conn, $_POST['nume']);
+    $prenume            = mysqli_real_escape_string($conn, $_POST['prenume']);
+    $email              = mysqli_real_escape_string($conn, $_POST['email']);
+    $ocupatie           = mysqli_real_escape_string($conn, $_POST['ocupatie']);
+    $telefon            = mysqli_real_escape_string($conn, $_POST['telefon']);
+    $cursuri            = $_POST['cursuri']; // de ce ? :'()
+    //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    //~~~~~~~~~~~~~~~~~~~~~~~~~~~TESTE~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     $sql = "INSERT INTO persoana(nume, prenume, email) VALUES ('$nume' , '$prenume', '$email')";
 
-    $conn = mysqli_connect("localhost","root","","db_summerschool");
-    
-}else {
-    echo 'eroare la submit';
+     echo $nume;
+     echo $prenume;
+     echo $email;
+     echo $ocupatie;
+     echo $telefon;
+     print_r($cursuri);
+
+     mysqli_query($conn, $sql);
+    //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 }
-
 ?>
