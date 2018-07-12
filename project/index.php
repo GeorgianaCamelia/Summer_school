@@ -88,17 +88,16 @@ include 'includes/connect.inc.php';
 
         <section id="inscrieri">
             <div id="border_radius">
-            <form action="includes/submit.php" method= "post" id-"form-reg" onsubmit="return checkform(this);">
-                <p>Completeaza campurile pentru a te inscrie.</p>
-                <span id= "form-message"></span>
+            <p>Completeaza campurile pentru a te inscrie.</p>
                 <hr>
+            <form method= "POST" id="form-reg" onsubmit="return checkform(this);">
 
                     <label for="nume">Nume:</label> 
                     <input type="text" name="nume" id="nume"> 
                                 
                     <label for="prenume">Prenume:</label> 
                     <input type="text" name="prenume" id="prenume"> 
-                            
+                                    
                     <label for="email">Email:</label>
                     <input type="text" name="email" id="email"> 
                                 
@@ -106,23 +105,24 @@ include 'includes/connect.inc.php';
                     <input type="text" name="telefon" id="telefon"> 
                             
                     Ocupatie:
-                    <select id= "ocupatie">
-                        <option value="altceva" disabled selected>Altceva</option>
+                    <select name= "ocupatie" id= "ocupatie">
+                        <option value="alege" selected>Alege</option>
+                        <option value="altceva" >Altceva</option>
                         <option value="elev">Elev</option>
                         <option value="student">Student</option>
                     </select> <br>
 
                     Alegeti cursurile la care doriti sa participati: <br>
-
                     <?php
-                        $query = "SELECT nume_curs FROM curs";
+                        $query = "SELECT * FROM curs";
                         $result = mysqli_query($conn, $query);
                                         
                         if(mysqli_num_rows($result)) {
                             while($row = mysqli_fetch_array($result)){
-                                    echo "<br><input name= 'form-chkbx' type='checkbox' name='cursuri[]' value='".$row['nume_curs']."'>".$row['nume_curs']."<br/>";
-                                        }
-                                        }
+
+                                    echo "<br><input type='checkbox'  name='cursuri[]' value='".$row['id_c']."'>".$row['nume_curs']."<br/>";
+                            }
+                        }
                     ?>
                     
                    <!-- START CAPTCHA -->
@@ -130,13 +130,14 @@ include 'includes/connect.inc.php';
                    <input type="text" id="randomfield" disabled /> 
                    <input type="button" id="btnrefresh" value="Refresh" onclick="ChangeCaptcha();" /> <br>
                    <input id="CaptchaEnter"  maxlength="6" /> <br> -->
-                  
 
                     <!-- END CAPTCHA -->
                    
-                    <input  id= "form-submit" type="submit" value="Trimite" onclick="check()">
+                    <input type="submit" name= "submit" value="Trimite"  id= "submit" onclick="check()">
                     <input type="reset" value="Reseteaza">
-                </form>
+                    <p id= "form-message"></p>
+                    
+            </form>
             </div>
         </section>
 

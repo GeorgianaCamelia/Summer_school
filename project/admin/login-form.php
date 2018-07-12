@@ -1,6 +1,6 @@
 <form method="POST">
 	<input type="hidden" name="comanda" value="login">
-	<table cellpadding="0" cellspacing="2" align="left" width="168">
+	<table cellpadding="0" cellspacing="2" align="left" width="168" bgcolor="#99ffdd">
 		<tr>
 			<td colspan="2"><b>Autentificare:</b></td>
 		</tr>
