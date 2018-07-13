@@ -181,12 +181,14 @@ input[type=reset]:hover {
 .input-error{
     transition: 200ms linear;
     background-color: #f2cdcd;
+    border: 1px solid red;
     font-style: italic;
 }
 
 .input-checked {
     transition: 200ms linear;
-    background-color:  #e5f1cc;
+    background-color: #87d86c;
+    border: 1px solid green;
 }
 
 

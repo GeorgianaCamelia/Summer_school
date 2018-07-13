@@ -19,6 +19,10 @@ $(document).ready(function(){
         event.preventDefault();
         // Presupunem in prima faza ca inputurile utilizatorului sunt valide
         var valid               = true;
+        var validCap            = false;
+
+        var CaptchaEnter        = $("#CaptchaEnter").val();
+        var randomfield         = $("#randomfield").val();
 
         var nume                = $("#nume").val();
         var prenume             = $("#prenume").val();
@@ -53,31 +57,58 @@ $(document).ready(function(){
 
         if(telefon.length != 10 || !isPhoneNumber(telefon)){
             valid = false;
-            $("#form-message").css('color', 'red');
-            $("#form-message").html('Numar de telefon invalid!');
+            add_err('#telefon','Numar de telefon invalid');
+        }else{
+            add_chk('#telefon');
         }
 
         if(email.length == 0 || $.trim(email) == '' || !isEmail(email)){
             valid = false;
-            $("#form-message").css('color', 'red');
-            $("#form-message").html('E-mail invalid!');
+            add_err('#email','Mail invalid');
+        }else{
+            add_chk('#email');  
         }
 
-        if(!isNume(prenume)){
+        if(!isNume(prenume) || $.trim(prenume) == '' || nume.length < 3){
             valid = false;
-            $("#form-message").css('color', 'red');
-            $("#form-message").html('Prenume invalid!');
+            add_err('#prenume','Prenume invalid');
+        }else{
+            add_chk('#prenume');  
         }
-        if(!isNume(nume)){
+
+        if(!isNume(nume) || $.trim(nume) == '' || nume.length < 3){
             valid = false;
-            $("#form-message").css('color', 'red');
-            $("#form-message").html('Nume invalid!');
+            add_err('#nume','Nume invalid');
+        }else{
+            add_chk('#nume');  
         }
+
+        // Validare Captcha
+        if(CaptchaEnter == randomfield){
+            validCap = true;
+            //~~~~~~~~~~~~~~CSS~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+            $("#CaptchaEnter").prop('disabled', true);
+            $("#CaptchaEnter").removeClass("input-error");
+            $("#CaptchaEnter").addClass("input-checked");
+            $("#CaptchaEnter").val('');
+            //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        }else{
+            validCap = false;
+            //~~~~~~~~~~~~~~~~~CSS~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+            $("#CaptchaEnter").prop('disabled', false);
+            $("#CaptchaEnter").addClass("input-error");
+            $("#CaptchaEnter").val('');
+            //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        }
+
 
          // Daca valid == false form-ul nu va trimite inputurile
-         if (valid == false) {
+         if (validCap == false) {
             return false;
-        }
+         }
+         if (valid == false ) {
+            return false;
+         }
 
         //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
         //~~~~~~~~~FUNCTII UTILE PENTRU VALIDAREA DATELOR~~~~~~~~~~~
@@ -94,6 +125,16 @@ $(document).ready(function(){
             var filter = /^[a-zA-Z]+$/;
             return filter.test(n);
         }
+        function add_err(id, text){
+            $(id).addClass('input-error');
+            $(id).attr('placeholder', text);
+            $(id).val('');
+        }
+        function add_chk(id){
+            $(id).removeClass('input-error');
+            $(id).removeAttr('placeholder');
+            $(id).addClass('input-checked');  
+        }
         //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
         //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
         //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -101,6 +142,40 @@ $(document).ready(function(){
         // Resetam form-message
         $("#form-message").css('color', 'black');
         $("#form-message").html('');
+
+
+        // ~~~~~~~~~~~~~~~Trimitem e-mail de confirmare~~~~~~~~~~~~~~
+        // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        // function sendMail() {
+        //     $.ajax({
+        //       type: 'POST',
+        //       url: 'https://mandrillapp.com/api/1.0/messages/send.json',
+        //       data: {
+        //         'key': '836e7402582fabc8acfa4ba9e176d65f-us18',
+        //         'message': {
+        //           'from_email': 'gherghe_geani@yahoo.com',
+        //           'to': [
+        //               {
+        //                 'email': email,
+        //                 'name': nume,
+        //                 'type': email
+        //               }
+        //             ],
+        //           'autotext': 'true',
+        //           'subject': 'Scoala de vara',
+        //           'html': 'Salut,'+nume+'!<br>Te-ai inscris cu success la scoala de vara! Tinem sa-ti amintim ca te-ai inscris la urmatoarele cursuri<br>'+cursuri.values+'<br>Bafta mai departe!';
+        //         }
+        //       }
+        //      }).done(function(response) {
+        //        console.log(response);
+        //      });
+        // }
+        //Trimitem e-mail
+        //sendMail();  //
+        //~~~~~~~~~~~~~~~
+
+        //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
         // Dupa validare trimitem inputurile catre submit.php unde urmeaza sa fie prelucrate
         $("#form-message").load("includes/submit.php", {

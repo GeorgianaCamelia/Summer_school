@@ -8,10 +8,10 @@ include 'includes/connect.inc.php';
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Summer School</title>     
         <link rel="stylesheet" type="text/css" href="css/style.css">
-        <script type="text/javascript" src="js/script.js"></script>
         <link href="https://fonts.googleapis.com/css?family=Roboto:300" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="js/script.js"></script>
         <script src="js/valid-form.js"></script>
         
         <style>
@@ -126,15 +126,13 @@ include 'includes/connect.inc.php';
                     ?>
                     
                    <!-- START CAPTCHA -->
-                   <!-- <h4> Introduceti codul: </h4>
+                   <h4> Introduceti codul: </h4>
                    <input type="text" id="randomfield" disabled /> 
                    <input type="button" id="btnrefresh" value="Refresh" onclick="ChangeCaptcha();" /> <br>
-                   <input id="CaptchaEnter"  maxlength="6" /> <br> -->
-
+                   <input id="CaptchaEnter"  maxlength="6" /> <br>
                     <!-- END CAPTCHA -->
                    
-                    <input type="submit" name= "submit" value="Trimite"  id= "submit" onclick="check()">
-                    <input type="reset" value="Reseteaza">
+                    <input type="submit" name= "submit" value="Trimite"  id= "submit">
                     <p id= "form-message"></p>
                     
             </form>
